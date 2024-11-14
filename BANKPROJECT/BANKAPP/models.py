@@ -1,12 +1,11 @@
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-    eid=models.IntegerField(primary_key=True)
+class BankLoan (models.Model):
+    loanid=models.IntegerField(primary_key=True)
     name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models.EmailField()
+    loantype=models.CharField(max_length=30)
+    amount=models.IntegerField()
+    c_acnt_num=models.IntegerField()
  
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('eid','name','salary','age','email')
-
+class BankAdmin(admin.ModelAdmin):
+    list_display=('loanid','name','loantype','amount','c_acnt_num')
